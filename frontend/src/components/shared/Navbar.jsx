@@ -19,9 +19,15 @@ const Navbar = () => {
 
         <div className="flex items-center gap-12">
           <ul className="flex font-medium items-center gap-5 text-white">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">Jobs</li>
-            <li className="cursor-pointer">Browse</li>
+            <li className="cursor-pointer">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link to="/jobs">Jobs</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link to="/browse">Browse</Link>
+            </li>
           </ul>
 
           {!user ? (
