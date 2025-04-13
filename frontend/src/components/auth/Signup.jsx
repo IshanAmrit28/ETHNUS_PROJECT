@@ -150,14 +150,17 @@ const Signup = () => {
               />
             </div>
           </div>
+
           {loading ? (
-            <Button className="w-full my-4">
-              {" "}
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait{" "}
+            <Button className="w-full my-4 flex items-center justify-center py-2 bg-blue-600 text-white rounded-md">
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
             </Button>
           ) : (
-            <Button type="submit" className="w-full my-4">
-              Signup
+            <Button
+              type="submit"
+              className="w-full my-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
+              SignUp
             </Button>
           )}
           <span className="text-sm">

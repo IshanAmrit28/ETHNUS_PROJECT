@@ -22,21 +22,28 @@ const category = [
 const CategoryCarousel = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const searchJobHandler = (query) => {
     dispatch(setSearchedQuery(query));
     navigate("/browse");
   };
 
   return (
-    <div>
-      <Carousel className="w-full max-w-xl mx-auto my-20">
+    <div className="my-10 px-4">
+      <h2 className="text-center text-2xl font-semibold text-[#6A38C2] mb-6">
+        Popular Categories
+      </h2>
+      <Carousel className="w-full max-w-3xl mx-auto">
         <CarouselContent>
           {category.map((cat, index) => (
-            <CarouselItem className="md:basis-1/2 lg-basis-1/3">
+            <CarouselItem
+              key={index}
+              className="md:basis-1/2 lg:basis-1/3 px-2"
+            >
               <Button
                 onClick={() => searchJobHandler(cat)}
                 variant="outline"
-                className="rounded-full"
+                className="w-full rounded-full border-purple-300 text-[#6A38C2] font-medium hover:bg-purple-100 transition-all duration-200"
               >
                 {cat}
               </Button>

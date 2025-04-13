@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../shared/Navbar";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { RadioGroup } from "../ui/radio-group";
@@ -11,6 +10,7 @@ import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
+import Navbar from "../shared/Navbar";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -48,21 +48,25 @@ const Login = () => {
       dispatch(setLoading(false));
     }
   };
+
   useEffect(() => {
     if (user) {
       navigate("/");
     }
-  }, []);
+  }, [user, navigate]);
+
   return (
     <div>
       <Navbar />
-      <div className="flex items-center justify-center max-w-7xl mx-auto">
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <form
           onSubmit={submitHandler}
-          className="w-1/2 border border-gray-200 rounded-md p-4 my-10"
+          className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg space-y-6"
         >
-          <h1 className="font-bold text-xl mb-5">Login</h1>
-          <div className="my-2">
+          <h1 className="text-2xl font-semibold text-center text-gray-800 mb-4">
+            Login
+          </h1>
+          <div>
             <Label>Email</Label>
             <Input
               type="email"
@@ -70,21 +74,24 @@ const Login = () => {
               name="email"
               onChange={changeEventHandler}
               placeholder="patel@gmail.com"
+              className="w-full mt-2 p-2 border border-gray-300 rounded-md"
             />
           </div>
 
-          <div className="my-2">
+          <div>
             <Label>Password</Label>
             <Input
               type="password"
               value={input.password}
               name="password"
               onChange={changeEventHandler}
-              placeholder="patel@gmail.com"
+              placeholder="********"
+              className="w-full mt-2 p-2 border border-gray-300 rounded-md"
             />
           </div>
+
           <div className="flex items-center justify-between">
-            <RadioGroup className="flex items-center gap-4 my-5">
+            <RadioGroup className="flex items-center gap-4 my-4">
               <div className="flex items-center space-x-2">
                 <Input
                   type="radio"
@@ -109,22 +116,26 @@ const Login = () => {
               </div>
             </RadioGroup>
           </div>
+
           {loading ? (
-            <Button className="w-full my-4">
-              {" "}
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait{" "}
+            <Button className="w-full my-4 flex items-center justify-center py-2 bg-blue-600 text-white rounded-md">
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
             </Button>
           ) : (
-            <Button type="submit" className="w-full my-4">
+            <Button
+              type="submit"
+              className="w-full my-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
               Login
             </Button>
           )}
-          <span className="text-sm">
+
+          <div className="text-center text-sm">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-blue-600">
+            <Link to="/signup" className="text-blue-600 hover:underline">
               Signup
             </Link>
-          </span>
+          </div>
         </form>
       </div>
     </div>
