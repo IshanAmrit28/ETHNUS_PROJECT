@@ -32,8 +32,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-[#e0c3fc] via-[#8ec5fc] to-[#c2e9fb] shadow-md">
-      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4">
+    <header className="bg-gradient-to-r from-[#e0c3fc] via-[#8ec5fc] to-[#c2e9fb] shadow-md w-full">
+      <div className="flex items-center justify-between w-full h-16 px-2">
         <h1 className="text-3xl font-extrabold text-purple-800 tracking-wide">
           Job<span className="text-blue-700">Vista</span>
         </h1>
@@ -109,7 +109,10 @@ const Navbar = () => {
                   />
                 </Avatar>
               </PopoverTrigger>
-              <PopoverContent className="w-80 bg-white shadow-lg border-purple-200">
+              <PopoverContent
+                className="w-80 bg-white shadow-lg border-purple-200"
+                sideOffset={10}
+              >
                 <div className="flex gap-3 items-center mb-3">
                   <Avatar className="border-2 border-purple-300 shadow-sm">
                     <AvatarImage

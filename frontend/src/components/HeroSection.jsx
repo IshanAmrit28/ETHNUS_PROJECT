@@ -16,7 +16,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="text-center px-4 py-10 bg-white text-[#3a0ca3]">
+    <div className="text-center px-4 py-10 text-[#3a0ca3]">
       <h1 className="text-5xl font-bold leading-tight">
         Discover & Apply to the Best <br />
         <span className="text-[#F83002]">Career Opportunities</span>
@@ -25,7 +25,7 @@ const HeroSection = () => {
         Unlock a world of job opportunities. Explore roles in top industries and
         find the perfect fit for your skills and aspirations.
       </p>
-      <div className="flex w-full max-w-2xl mx-auto mt-6 shadow-lg border border-[#3a0ca3] pl-4 rounded-full items-center gap-4 bg-white bg-opacity-80">
+      <div className="flex w-full max-w-2xl mx-auto mt-6 shadow-lg border border-[#3a0ca3] pl-4 rounded-full items-center gap-4 bg-white">
         <input
           type="text"
           placeholder="Find your dream jobs"

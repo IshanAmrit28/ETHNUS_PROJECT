@@ -17,12 +17,14 @@ const Home = () => {
     }
   }, []);
   return (
-    <div>
+    <>
       <Navbar />
-      <HeroSection />
-      <CategoryCarousel />
-      <LatestJobs />
-    </div>
+      <div className="bg-blue-50 min-h-screen">
+        <HeroSection />
+        <CategoryCarousel />
+        <LatestJobs />
+      </div>
+    </>
   );
 };
 
